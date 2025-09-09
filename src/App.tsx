@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Waves, Settings, Bell } from 'lucide-react';
+import { Waves, Settings, Bell, X } from 'lucide-react';
 import BoatDepthOverlay from './components/BoatDepthOverlay';
 import TideInfoPanel from './components/TideInfoPanel';
 import PortSelector from './components/PortSelector';
@@ -17,6 +17,8 @@ function App() {
   const [boatType, setBoatType] = useState<'motor' | 'sail'>('motor');
   const [draft, setDraft] = useState(1.5);
   const [showConfig, setShowConfig] = useState(true);
+  const [showDrawer, setShowDrawer] = useState(false);
+  const [waveClicked, setWaveClicked] = useState(false);
 
   const { tideData } = useTideData(selectedPort?.altitude || 0);
 
@@ -75,12 +77,58 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-cyan-50 to-blue-200">
+      {/* Drawer DaisyUI */}
+      {showDrawer && (
+        <div className="fixed inset-0 z-50 flex">
+          {/* Overlay */}
+          <div className="fixed inset-0 bg-black/30" onClick={() => setShowDrawer(false)} />
+          {/* Drawer content */}
+          <div className="relative bg-white w-64 h-full shadow-xl p-6 flex flex-col animate-slide-in-left">
+            <button
+              className="self-end mb-4 text-gray-500 hover:text-blue-600"
+              onClick={() => setShowDrawer(false)}
+              aria-label="Fermer le menu"
+            >
+              <X className='h-8 w-8'/>
+            </button>
+            <h2 className="text-lg font-bold mb-6 text-blue-700">Menu</h2>
+            <button
+              className="mb-3 w-full text-left px-4 py-2 rounded hover:bg-blue-50 font-medium"
+              onClick={() => {
+                setShowConfig(false);
+                setShowDrawer(false);
+              }}
+            >
+              Accueil
+            </button>
+            <button
+              className="w-full text-left px-4 py-2 rounded hover:bg-blue-50 font-medium"
+              onClick={() => {
+                setShowConfig(true);
+                setShowDrawer(false);
+              }}
+            >
+              Configuration
+            </button>
+          </div>
+        </div>
+      )}
       {/* Header */}
       <header className="bg-white/90 backdrop-blur shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <Waves className="w-8 h-8 text-blue-600" />
+              <button
+                className="p-2 m-0 bg-transparent border-none focus:outline-none transition hover:scale-110 hover:bg-blue-100 rounded-full group"
+                onClick={() => {
+                  setShowDrawer(true);
+                  setWaveClicked(true);
+                  setTimeout(() => setWaveClicked(false), 400);
+                }}
+                aria-label="Ouvrir le menu"
+              >
+                <Waves className={`w-8 h-8 text-blue-600 transition-colors duration-200 group-hover:text-blue-800 ${waveClicked ? 'animate-spin' : ''}`} style={{ transitionDuration: '400ms' }} />
+              </button>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">La Bonne Marée</h1>
                 <p className="text-sm text-gray-600">Bassin d'Arcachon</p>
@@ -92,9 +140,6 @@ function App() {
                 className="p-2 text-gray-600 hover:text-blue-600 rounded-lg hover:bg-blue-50"
               >
                 <Settings className="w-5 h-5" />
-              </button>
-              <button className="p-2 text-gray-600 hover:text-blue-600 rounded-lg hover:bg-blue-50">
-                <Bell className="w-5 h-5" />
               </button>
             </div>
           </div>
