@@ -1,0 +1,16 @@
+Arcachon Port Principal,Port,3.0
+Arcachon Bassin à Flot,Port,2.8
+La Teste Balisage,Cale,1.5
+Gujan-Mestras Port,Port,2.2
+Gujan-Mestras Cale Publique,Cale,0.8
+Le Teich Port,Port,1.9
+Biganos Cale,Cale,1.2
+Audenge Port,Port,2.1
+Lanton Cale,Cale,0.9
+Andernos Port,Port,2.5
+Arès Port,Port,1.0
+Arès Cale,Cale,0.5
+Cap Ferret Bélisaire,Port,2.3
+Cap Ferret Piraillan,Cale,0.7
+L'Herbe Cale,Cale,0.3
+Canon Cale,Cale,0.4
