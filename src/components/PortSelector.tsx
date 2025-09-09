@@ -9,7 +9,7 @@ interface Port {
 
 interface PortSelectorProps {
   selectedPort: Port | null;
-  onPortChange: (port: Port) => void;
+  onPortChange: (port: Port) => void; 
 }
 
 export default function PortSelector({ selectedPort, onPortChange }: PortSelectorProps) {

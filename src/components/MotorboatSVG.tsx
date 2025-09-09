@@ -7,7 +7,7 @@ type Props = {
   accentColor?: string;
 };
 
-export default function MotorboatSVG({
+export default function MotorboatSVG({ 
   className,
   hullColor = "#d1d5db",
   strokeColor = "#111827",

@@ -77,4 +77,4 @@ export function useTideData(portAltitude: number) {
   }, [portAltitude]);
 
   return { tideData, loading };
-}
+} 

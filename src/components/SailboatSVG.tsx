@@ -18,7 +18,7 @@ export default function SailboatSVG({
       <g transform="scale(0.4) translate(150,100)">
       <path d="M40,100 L160,100 Q172,136 152,186 Q100,226 48,186 Q28,136 40,100 Z"
             fill={hullColor} stroke={strokeColor} strokeWidth={2}/>
-        </g>
+        </g> 
       <g transform="translate(0,-20)">
       <rect x="98" y="28" width="4" height="74" fill="#4b5563"/>
       <path d="M102,32 L150,100 L102,100 Z" fill={sailColor} stroke={strokeColor} strokeWidth={1.5}/>

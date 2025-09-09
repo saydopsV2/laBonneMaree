@@ -11,7 +11,7 @@ interface TideInfo {
   timeToSafetyLimit: string;
   status: "safe" | "warning" | "danger";
 }
-
+ 
 export default function TideInfoPanel({ tideInfo }: { tideInfo: TideInfo }) {
   const getStatusColor = () => {
     switch (tideInfo.status) {

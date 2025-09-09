@@ -15,7 +15,7 @@ export default function BoatConfig({
   onDraftChange
 }: BoatConfigProps) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4"> 
       {/* Type de bateau */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-3">

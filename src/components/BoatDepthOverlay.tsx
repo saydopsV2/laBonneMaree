@@ -176,5 +176,5 @@ export default function BoatDepthOverlay({
       </svg>
       
     </div>
-  );
+  ); 
 }

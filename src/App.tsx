@@ -5,6 +5,7 @@ import TideInfoPanel from './components/TideInfoPanel';
 import PortSelector from './components/PortSelector';
 import BoatConfig from './components/BoatConfig';
 import { useTideData } from './hooks/useTideData';
+import Footer from './components/Footer';
 
 interface Port {
   name: string;
@@ -76,7 +77,7 @@ function App() {
   } : null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-cyan-50 to-blue-200">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-100 via-cyan-50 to-blue-200">
       {/* Drawer DaisyUI */}
       {showDrawer && (
         <div className="fixed inset-0 z-50 flex">
@@ -146,10 +147,10 @@ function App() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-6">
+      <main className="flex-1 flex flex-col max-w-7xl w-full mx-auto px-4 py-6">
         {showConfig ? (
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+          <div className="flex flex-col items-center justify-center flex-1">
+            <div className="bg-white rounded-xl shadow-lg p-6 mb-6 w-full max-w-2xl">
               <h2 className="text-xl font-bold text-gray-900 mb-6">
                 Configuration de votre embarcation
               </h2>
@@ -181,10 +182,10 @@ function App() {
         ) : (
           <>
             {selectedPort && tideInfo ? (
-              <div className="grid lg:grid-cols-3 gap-6">
+              <div className="flex flex-col lg:flex-row gap-6 min-h-[70vh] flex-1">
                 {/* Visualisation principale */}
-                <div className="lg:col-span-2">
-                  <div className="bg-white rounded-xl shadow-lg p-6">
+                <div className="lg:w-2/3 w-full h-dvh min-h-[70vh] flex flex-col">
+                  <div className="bg-white rounded-xl shadow-lg p-6 flex-1 flex flex-col">
                     <div className="flex items-center justify-between mb-6">
                       <div>
                         <h2 className="text-xl font-bold text-gray-900">
@@ -208,14 +209,13 @@ function App() {
                     />
                   </div>
                 </div>
-
                 {/* Panel d'informations */}
-                <div className="lg:col-span-1">
+                <div className="lg:w-1/3 w-full flex flex-col">
                   <TideInfoPanel tideInfo={tideInfo} />
                 </div>
               </div>
             ) : (
-              <div className="text-center py-12">
+              <div className="flex flex-1 items-center justify-center text-center py-12">
                 <button
                   onClick={() => setShowConfig(true)}
                   className="bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors"
@@ -229,16 +229,7 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white/50 backdrop-blur border-t border-white/20 mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-6 text-center text-gray-600">
-          <p className="text-sm">
-            © 2025 La Bonne Marée - Application de surveillance des marées du Bassin d'Arcachon
-          </p>
-          <p className="text-xs mt-2">
-            Données officielles - Mise à jour en temps réel - Marge de sécurité: 50cm
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
