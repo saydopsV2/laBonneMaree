@@ -90,7 +90,7 @@ function App() {
               onClick={() => setShowDrawer(false)}
               aria-label="Fermer le menu"
             >
-              <X className='h-8 w-8'/>
+              <X className='h-8 w-8' />
             </button>
             <h2 className="text-lg font-bold mb-6 text-blue-700">Menu</h2>
             <button
@@ -154,20 +154,20 @@ function App() {
               <h2 className="text-xl font-bold text-gray-900 mb-6">
                 Configuration de votre embarcation
               </h2>
-              
+
               <div className="space-y-6">
                 <PortSelector
                   selectedPort={selectedPort}
                   onPortChange={setSelectedPort}
                 />
-                
+
                 <BoatConfig
                   boatType={boatType}
                   draft={draft}
                   onBoatTypeChange={setBoatType}
                   onDraftChange={setDraft}
                 />
-                
+
                 {selectedPort && (
                   <button
                     onClick={() => setShowConfig(false)}
@@ -185,7 +185,7 @@ function App() {
               <div className="flex flex-col lg:flex-row gap-6 min-h-[70vh] flex-1">
                 {/* Visualisation principale */}
                 <div className="lg:w-2/3 w-full h-dvh min-h-[70vh] flex flex-col">
-                  <div className="bg-white rounded-xl shadow-lg p-6 flex-1 flex flex-col">
+                  <div className="bg-white rounded-xl shadow-lg p-6 flex-1 flex flex-col min-h-0">
                     <div className="flex items-center justify-between mb-6">
                       <div>
                         <h2 className="text-xl font-bold text-gray-900">
@@ -200,13 +200,15 @@ function App() {
                         <p className="text-lg font-bold text-gray-900">{draft.toFixed(1)}m</p>
                       </div>
                     </div>
-                    
-                    <BoatDepthOverlay
-                      boat={boatType}
-                      draftMeters={draft}
-                      tideHeightMeters={tideInfo.currentHeight}
-                      portAltitudeMeters={selectedPort.altitude}
-                    />
+
+                    <div className="flex-1 min-h-0">
+                      <BoatDepthOverlay
+                        boat={boatType}
+                        draftMeters={draft}
+                        tideHeightMeters={tideInfo.currentHeight}
+                        portAltitudeMeters={selectedPort.altitude}
+                      />
+                    </div>
                   </div>
                 </div>
                 {/* Panel d'informations */}

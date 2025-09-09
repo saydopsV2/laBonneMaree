@@ -57,8 +57,13 @@ export default function BoatDepthOverlay({
   }, [boat, boatY]);
 
   return (
-    <div className="relative w-full h-96 bg-gradient-to-b from-sky-200 to-blue-400 rounded-xl overflow-hidden">
-      <svg ref={svgRef} viewBox="0 0 400 500" className="w-full h-full">
+    <div className="relative w-full h-full bg-gradient-to-b from-sky-200 to-blue-400 rounded-xl overflow-hidden">
+      <svg 
+        ref={svgRef} 
+        viewBox="0 0 400 500" 
+        className="w-full h-full"
+        preserveAspectRatio="xMidYMid meet"
+      >
         {/* Fond sableux */}
         <rect x="0" y={seabedY} width="400" height="100" fill="#b45309" />
         <rect x="0" y={seabedY - 5} width="400" height="5" fill="#92400e" />
@@ -174,7 +179,6 @@ export default function BoatDepthOverlay({
           </marker>
         </defs>
       </svg>
-      
     </div>
-  ); 
+  );
 }
