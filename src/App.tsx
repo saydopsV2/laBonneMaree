@@ -43,10 +43,10 @@ function App() {
         <Header />
         
         <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/tide" element={<TideMain />} />
-            <Route path="/ports" element={<PortsMain />} />
-            <Route path="/settings" element={<div className="p-8 text-center text-on-surface">Settings Page (Coming Soon)</div>} />
+            <Route path="/laBonneMaree/" element={<Dashboard />} />
+            <Route path="/laBonneMaree/tide" element={<TideMain />} />
+            <Route path="/laBonneMaree/ports" element={<PortsMain />} />
+            <Route path="/laBonneMaree/settings" element={<div className="p-8 text-center text-on-surface">Settings Page (Coming Soon)</div>} />
         </Routes>
         
         <BottomNav />
