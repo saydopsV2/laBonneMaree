@@ -14,13 +14,13 @@ const Dashboard = () => {
         {/* Dashboard Header */}
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <span className="font-label text-xs font-bold uppercase tracking-widest text-outline mb-2 block">Vessel Overview</span>
-            <h2 className="font-headline text-4xl font-extrabold text-primary">Dashboard</h2>
+            <span className="font-label text-xs font-bold uppercase tracking-widest text-outline mb-2 block">Aperçu du tirant d'eau</span>
+            <h2 className="font-headline text-4xl font-extrabold text-primary">Tableau de bord</h2>
           </div>
           <div className="flex items-center gap-3 bg-surface-container-low p-2 rounded-xl">
             <div className="px-4 py-2 bg-surface-container-lowest rounded-lg flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              <span className="font-label text-sm font-semibold text-on-surface">Port Entry Window</span>
+              <span className="font-label text-sm font-semibold text-on-surface">Fenêtre d'entrée du port</span>
             </div>
           </div>
         </div>
