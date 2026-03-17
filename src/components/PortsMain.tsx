@@ -63,6 +63,8 @@ export const PortsMain: React.FC = () => {
                 onToggleMap={handleToggleMap}
                 searchTerm={searchTerm}
                 onSearchChange={setSearchTerm}
+                filteredPorts={filteredPorts}
+                onSelectPort={handlePortSelect}
             />
             
             {/* Port Grid (Asymmetric Bento Style) */}
