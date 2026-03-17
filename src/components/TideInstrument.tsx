@@ -1,10 +1,8 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useTideData } from '../hooks/useTideData';
-import { usePortContext } from '../context/PortContext';
 
 export const TideInstrument = () => {
     const { getClosestTide, getTidesForDate, loading, error } = useTideData();
-    const { selectedPort } = usePortContext();
 
     // Get current date and time
     const now = new Date();
@@ -17,7 +15,7 @@ export const TideInstrument = () => {
     }, [getClosestTide, currentDate, currentTime]);
 
     // Get min and max for the day
-    const { minTide, maxTide, avgTide } = useMemo(() => {
+    const { minTide, maxTide } = useMemo(() => {
         const tidesForDay = getTidesForDate(currentDate);
         
         if (tidesForDay.length === 0) {
