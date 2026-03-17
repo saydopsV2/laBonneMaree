@@ -1,0 +1,34 @@
+Arcachon,Port de plaisance,3
+Arcachon,Port de travail,-0.80
+Arcachon,Port de travail carburant,-1.0
+Arcachon, Cale du Port de travail,-1.0
+Aiguillon, Cale Bonin,-2
+Aiguillon, Pole Nautique,-1.5
+La Teste,Port,-1.5
+La Teste,Cale,-1.8
+La Teste, Port du Rocher,-2.5
+La Hume,Port,-1.5
+Gujan-Meyran-Ouest,Port,-2
+Gujan-Meyran-Est,Port,-2
+Gujan-Gujan,Port,-2.5
+Gujan-Larros,Port,-1.5
+Gujan-Larros,Cale,-2.
+Gujan-Canal,Port,-2.6
+Gujan-Barbotiere,Port,-2.8
+Le Teich,Port,-2.50
+Biganos,Port,-3.0
+Biganos, Port des tuiles,-2.8
+Audenge,Port Darse Nord,-3.0
+Audenge,Port Darse Nord,-2.6
+Lanton-Cassy,Port,-2.2
+Lanton-Taussat,Port,-2.8
+Andernos-Port de fonteinevielle,-2.50
+Andernos-Port de betey,-2.50
+Andernos,Port,-2.60
+Ares,Port,-2.60
+Claouey,Cale du CNC,-3.0
+La Four,Port,-3.0
+Grand Piquey,Port,-3.0
+Piraillan,Port,-3.0
+La Vigne,Port,1.50
+Cap Ferret, Cale CNF,-3.0

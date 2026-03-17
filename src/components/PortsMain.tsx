@@ -3,13 +3,18 @@ import { PortsHeader } from './PortsHeader';
 import { FeaturedPortCard } from './FeaturedPortCard';
 import { QuickPortStatus } from './QuickPortStatus';
 import { PortRowItem } from './PortRowItem';
-import { PortGridItem } from './PortGridItem';
 import { MapTeaser } from './MapTeaser';
+import { usePorts } from '../hooks/usePorts';
 
 export const PortsMain: React.FC = () => {
+    const { ports, loading, error } = usePorts();
+
     const handleToggleMap = () => {
         console.log("Toggle Map clicked");
     };
+
+    if (loading) return <div className="p-4 text-center">Chargement des ports...</div>;
+    if (error) return <div className="p-4 text-center text-red-500">Erreur: {error}</div>;
 
     return (
         <main className="flex-1 px-4 py-6 max-w-4xl mx-auto w-full pb-24">
@@ -20,36 +25,17 @@ export const PortsMain: React.FC = () => {
                 <FeaturedPortCard />
                 <QuickPortStatus />
                 
-                {/* List Row: Antibes */}
-                <PortRowItem 
-                    name="Ares"
-                    distance="À 12.4 nm de votre position"
-                    coefficient={82}
-                    level="2.45m"
-                    status="Rising"
-                    imgSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuD7io_dhlHZ4ZXsX0tT5FbrYQiAxyvDTTJ_cGSyslh82elj-vC-eDs2hXq46gtdjAvd6gS1RD7v4XTgoxczNcncVBhzHxbxNZcz2nsGWjfhfuvTLQYjWsaBRbvv7JhF-OjYGh0sEGhDm5NrX0isfsRPvlYBM8-qVV6xHGfiSu1QxBXyArcnwbHlkaXVGaBc1DjniX51WNectjJf0z5Q7J7A6l90VC6wVqvIcGYZ-EArTkhttHDEkGfF9NC9Dto79ywmA7Sq94t8Rzo"
-                />
-
-                
-                <PortGridItem 
-                    name="L'Herbe"
-                    location="Cap Ferret, France"
-                    warning={true}
-                    level="0.9m"
-                    status="Low Tide soon"
-                    nextEventTime="17:15"
-                    nextEventLabel="Basse Mer"
-                />
-
-                
-                <PortGridItem 
-                    name="La Teste-de-Buch"
-                    location="La Teste-de-Buch, France"
-                    level="3.1m"
-                    status="Rising"
-                    nextEventTime="21:05"
-                    nextEventLabel="Pleine Mer"
-                />
+                {ports.map((port, index) => (
+                    <PortRowItem 
+                        key={`${port.ville}-${index}`}
+                        name={port.ville}
+                        distance={port.endroit}
+                        coefficient={0} // Donnée non disponible dans le fichier
+                        level={`${port.hauteur}m`}
+                        status="Stable" // Donnée non disponible
+                        imgSrc="https://images.unsplash.com/photo-1569263979104-565b63485f78?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" // Image par défaut
+                    />
+                ))}
             </div>
 
             <MapTeaser />
