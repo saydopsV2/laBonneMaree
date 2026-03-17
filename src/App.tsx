@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Header } from "./components/Header";
 import { HeroCountdown } from "./components/HeroCountdown";
 import { TideInstrument } from "./components/TideInstrument";
@@ -37,23 +37,21 @@ const Dashboard = () => {
 };
 
 function App() {
-  const basename = '/laBonneMaree';
-
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="bg-surface font-body text-on-surface min-h-screen flex flex-col">
         <Header />
         
         <Routes>
-            <Route path={`${basename}/`} element={<Dashboard />} />
-            <Route path={`${basename}/tide`} element={<TideMain />} />
-            <Route path={`${basename}/ports`} element={<PortsMain />} />
-            <Route path={`${basename}/settings`} element={<div className="p-8 text-center text-on-surface">Settings Page (Coming Soon)</div>} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/tide" element={<TideMain />} />
+            <Route path="/ports" element={<PortsMain />} />
+            <Route path="/settings" element={<div className="p-8 text-center text-on-surface">Settings Page (Coming Soon)</div>} />
         </Routes>
         
         <BottomNav />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
