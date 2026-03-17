@@ -78,7 +78,7 @@ export const PortsMain: React.FC = () => {
                         name={port.ville}
                         distance={port.endroit}
                         coefficient={0}
-                        level={`${port.hauteur}m`}
+                        level={`${port.hauteurCale}m`}
                         status="Stable"
                         imgSrc="https://images.unsplash.com/photo-1569263979104-565b63485f78?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
                         onClick={() => handlePortSelect(port)}

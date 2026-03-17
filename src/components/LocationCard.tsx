@@ -35,7 +35,7 @@ export const LocationCard: React.FC = () => {
                 <div className="grid grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1">
                         <span className="text-[10px] font-bold text-outline uppercase">Hauteur d'eau</span>
-                        <span className="font-bold text-primary">{selectedPort.hauteur}m</span>
+                        <span className="font-bold text-primary">{selectedPort.hauteurCale}m</span>
                     </div>
                     <div className="flex flex-col gap-1">
                         <span className="text-[10px] font-bold text-outline uppercase">Visibilité</span>

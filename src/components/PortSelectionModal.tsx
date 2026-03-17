@@ -34,7 +34,7 @@ export const PortSelectionModal: React.FC<PortSelectionModalProps> = ({
                             <p className="font-bold text-primary">{port.ville}</p>
                             <p className="text-sm text-on-surface-variant">{port.endroit}</p>
                             <p className="text-sm text-on-surface-variant mt-2">
-                                Hauteur d'eau: <span className="font-semibold text-primary">{port.hauteur}m</span>
+                                Hauteur d'eau: <span className="font-semibold text-primary">{port.hauteurCale}m</span>
                             </p>
                         </div>
                     </div>

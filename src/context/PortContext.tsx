@@ -34,7 +34,7 @@ export const PortProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                             return {
                                 ville: parts[0].trim(),
                                 endroit: parts[1].trim(),
-                                hauteur: parts[2].trim()
+                                hauteurCale: parts[2].trim()
                             };
                         }
                         return null;
