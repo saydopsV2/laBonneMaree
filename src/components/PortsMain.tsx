@@ -22,7 +22,7 @@ export const PortsMain: React.FC = () => {
                 
                 {/* List Row: Antibes */}
                 <PortRowItem 
-                    name="Port Vauban Antibes"
+                    name="Ares"
                     distance="À 12.4 nm de votre position"
                     coefficient={82}
                     level="2.45m"
@@ -30,10 +30,10 @@ export const PortsMain: React.FC = () => {
                     imgSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuD7io_dhlHZ4ZXsX0tT5FbrYQiAxyvDTTJ_cGSyslh82elj-vC-eDs2hXq46gtdjAvd6gS1RD7v4XTgoxczNcncVBhzHxbxNZcz2nsGWjfhfuvTLQYjWsaBRbvv7JhF-OjYGh0sEGhDm5NrX0isfsRPvlYBM8-qVV6xHGfiSu1QxBXyArcnwbHlkaXVGaBc1DjniX51WNectjJf0z5Q7J7A6l90VC6wVqvIcGYZ-EArTkhttHDEkGfF9NC9Dto79ywmA7Sq94t8Rzo"
                 />
 
-                {/* List Row: Nice */}
+                
                 <PortGridItem 
-                    name="Nice Lympia"
-                    location="Nice, France"
+                    name="L'Herbe"
+                    location="Cap Ferret, France"
                     warning={true}
                     level="0.9m"
                     status="Low Tide soon"
@@ -41,10 +41,10 @@ export const PortsMain: React.FC = () => {
                     nextEventLabel="Basse Mer"
                 />
 
-                {/* List Row: Monaco */}
+                
                 <PortGridItem 
-                    name="Port Hercule"
-                    location="Monaco"
+                    name="La Teste-de-Buch"
+                    location="La Teste-de-Buch, France"
                     level="3.1m"
                     status="Rising"
                     nextEventTime="21:05"

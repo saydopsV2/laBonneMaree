@@ -4,7 +4,7 @@ export const QuickPortStatus: React.FC = () => {
     return (
         <div className="md:col-span-4 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between">
             <div>
-                <h3 className="font-headline text-xl font-bold text-primary mb-1">Cannes</h3>
+                <h3 className="font-headline text-xl font-bold text-primary mb-1">Andernos</h3>
                 <p className="text-xs text-on-surface-variant font-label mb-4">Vieux Port</p>
                 <div className="space-y-4">
                     <div className="flex items-center justify-between">
