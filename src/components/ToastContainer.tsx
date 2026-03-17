@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNotification } from '../context/NotificationContext';
 
 export const ToastContainer: React.FC = () => {
