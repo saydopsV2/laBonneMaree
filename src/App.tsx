@@ -37,16 +37,18 @@ const Dashboard = () => {
 };
 
 function App() {
+  const basename = '/laBonneMaree';
+
   return (
-    <BrowserRouter basename="/laBonneMaree">
+    <BrowserRouter>
       <div className="bg-surface font-body text-on-surface min-h-screen flex flex-col">
         <Header />
         
         <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/tide" element={<TideMain />} />
-            <Route path="/ports" element={<PortsMain />} />
-            <Route path="/settings" element={<div className="p-8 text-center text-on-surface">Settings Page (Coming Soon)</div>} />
+            <Route path={`${basename}/`} element={<Dashboard />} />
+            <Route path={`${basename}/tide`} element={<TideMain />} />
+            <Route path={`${basename}/ports`} element={<PortsMain />} />
+            <Route path={`${basename}/settings`} element={<div className="p-8 text-center text-on-surface">Settings Page (Coming Soon)</div>} />
         </Routes>
         
         <BottomNav />
