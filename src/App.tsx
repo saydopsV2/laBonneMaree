@@ -7,15 +7,19 @@ import { LocationCard } from "./components/LocationCard";
 import { BottomNav } from "./components/BottomNav";
 import { TideMain } from "./components/TideMain";
 import { PortsMain } from "./components/PortsMain";
+import { PortProvider, usePortContext } from "./context/PortContext";
+import { NotificationProvider } from "./context/NotificationContext";
+import { ToastContainer } from "./components/ToastContainer";
 
 const Dashboard = () => {
+    const { selectedPort } = usePortContext();
     return (
       <main className="flex-1 px-6 pt-8 pb-32 max-w-7xl mx-auto w-full">
         {/* Dashboard Header */}
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <span className="font-label text-xs font-bold uppercase tracking-widest text-outline mb-2 block">Aperçu du tirant d'eau</span>
-            <h2 className="font-headline text-4xl font-extrabold text-primary">Tableau de bord</h2>
+            <h2 className="font-headline text-4xl font-extrabold text-primary">Tableau de bord {selectedPort?.ville || 'Port'}</h2>
           </div>
           <div className="flex items-center gap-3 bg-surface-container-low p-2 rounded-xl">
             <div className="px-4 py-2 bg-surface-container-lowest rounded-lg flex items-center gap-2">
@@ -38,20 +42,25 @@ const Dashboard = () => {
 
 function App() {
   return (
-    <HashRouter>
-      <div className="bg-surface font-body text-on-surface min-h-screen flex flex-col">
-        <Header />
-        
-        <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/tide" element={<TideMain />} />
-            <Route path="/ports" element={<PortsMain />} />
-            <Route path="/settings" element={<div className="p-8 text-center text-on-surface">Settings Page (Coming Soon)</div>} />
-        </Routes>
-        
-        <BottomNav />
-      </div>
-    </HashRouter>
+    <PortProvider>
+      <NotificationProvider>
+        <HashRouter>
+          <div className="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+            <Header />
+            
+            <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/tide" element={<TideMain />} />
+                <Route path="/ports" element={<PortsMain />} />
+                <Route path="/settings" element={<div className="p-8 text-center text-on-surface">Settings Page (Coming Soon)</div>} />
+            </Routes>
+            
+            <BottomNav />
+            <ToastContainer />
+          </div>
+        </HashRouter>
+      </NotificationProvider>
+    </PortProvider>
   );
 }
 

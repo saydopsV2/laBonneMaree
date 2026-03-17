@@ -2,9 +2,11 @@ import React from 'react';
 
 interface PortsHeaderProps {
     onToggleMap: () => void;
+    searchTerm: string;
+    onSearchChange: (value: string) => void;
 }
 
-export const PortsHeader: React.FC<PortsHeaderProps> = ({ onToggleMap }) => {
+export const PortsHeader: React.FC<PortsHeaderProps> = ({ onToggleMap, searchTerm, onSearchChange }) => {
     return (
         <>
             {/* Title & Toggle Section */}
@@ -27,9 +29,11 @@ export const PortsHeader: React.FC<PortsHeaderProps> = ({ onToggleMap }) => {
                     <span className="material-symbols-outlined text-outline">search</span>
                 </div>
                 <input 
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => onSearchChange(e.target.value)}
                     className="w-full bg-surface-container-lowest border-none rounded-xl py-4 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 placeholder:text-outline/60 text-lg" 
                     placeholder="Rechercher un port, une marina..." 
-                    type="text"
                 />
             </div>
         </>

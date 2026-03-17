@@ -7,11 +7,12 @@ interface PortRowItemProps {
     level: string;
     status: 'Rising' | 'Falling' | 'Stable';
     imgSrc: string;
+    onClick?: () => void;
 }
 
-export const PortRowItem: React.FC<PortRowItemProps> = ({ name, distance, coefficient, level, status, imgSrc }) => {
+export const PortRowItem: React.FC<PortRowItemProps> = ({ name, distance, coefficient, level, status, imgSrc, onClick }) => {
     return (
-        <div className="md:col-span-12 bg-surface-container-lowest p-5 rounded-xl flex items-center gap-6 border border-outline-variant/10 group hover:bg-surface-container-low transition-colors cursor-pointer">
+        <div onClick={onClick} className="md:col-span-12 bg-surface-container-lowest p-5 rounded-xl flex items-center gap-6 border border-outline-variant/10 group hover:bg-surface-container-low transition-colors cursor-pointer">
             <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                 <img className="w-full h-full object-cover" src={imgSrc} alt={`${name} port view`} />
             </div>
