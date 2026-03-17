@@ -7,7 +7,7 @@ export const TideGraph: React.FC = () => {
                 <div className="flex justify-between items-start mb-12">
                     <div>
                         <h2 className="font-headline text-xl font-bold text-primary">Courbe Journalière</h2>
-                        <p className="text-sm text-on-surface-variant">Port de Saint-Malo • 24 Octobre</p>
+                        <p className="text-sm text-on-surface-variant">Port d'Arcachon - 24 Octobre</p>
                     </div>
                     <div className="text-right">
                         <span className="font-label text-xs uppercase tracking-widest text-outline block mb-1">Niveau Actuel</span>
@@ -28,14 +28,14 @@ export const TideGraph: React.FC = () => {
                     <div className="h-4 w-4 rounded-full border-4 border-surface bg-primary shadow-lg"></div>
                     <div className="mt-2 text-center">
                         <p className="font-label text-[10px] font-bold uppercase">Pleine Mer</p>
-                        <p className="font-headline text-sm font-extrabold">09:42 • 9.8m</p>
+                        <p className="font-headline text-sm font-extrabold">09:42 - 9.8m</p>
                     </div>
                 </div>
                 <div className="absolute left-[80%] bottom-[15%] flex flex-col items-center">
                     <div className="h-4 w-4 rounded-full border-4 border-surface bg-secondary shadow-lg"></div>
                     <div className="mt-2 text-center">
                         <p className="font-label text-[10px] font-bold uppercase text-secondary">Basse Mer</p>
-                        <p className="font-headline text-sm font-extrabold text-secondary">16:15 • 1.2m</p>
+                        <p className="font-headline text-sm font-extrabold text-secondary">16:15 - 1.2m</p>
                     </div>
                 </div>
                 {/* Current Position Marker */}

@@ -15,7 +15,7 @@ export const FeaturedPortCard: React.FC = () => {
             <div className="relative z-10 flex justify-between items-start">
                 <div>
                     <span className="bg-secondary px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tighter mb-2 inline-block">Favori</span>
-                    <h3 className="font-headline text-3xl font-bold">Port de Saint-Tropez</h3>
+                    <h3 className="font-headline text-3xl font-bold">Port d'Arcachon</h3>
                     <p className="font-label text-sm opacity-80 flex items-center gap-1 mt-1">
                         <span className="material-symbols-outlined text-xs">location_on</span>
                         43.2727° N, 6.6385° E
