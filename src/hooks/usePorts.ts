@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react';
-
-export interface Port {
-    ville: string;
-    endroit: string;
-    hauteur: string;
-}
+import type { Port } from '../types';
 
 export const usePorts = () => {
     const [ports, setPorts] = useState<Port[]>([]);
@@ -27,7 +22,7 @@ export const usePorts = () => {
                             return {
                                 ville: parts[0].trim(),
                                 endroit: parts[1].trim(),
-                                hauteur: parts[2].trim()
+                                hauteurCale: parts[2].trim()
                             };
                         }
                         return null;

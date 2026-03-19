@@ -1,6 +1,10 @@
 import React from 'react';
+import { PortTimerBadge } from './PortTimerBadge';
+import { usePortContext } from '../context/PortContext';
 
 export const FeaturedPortCard: React.FC = () => {
+    const { selectedPort } = usePortContext();
+
     return (
         <div className="md:col-span-8 group relative overflow-hidden rounded-xl bg-primary text-on-primary p-8 flex flex-col justify-between aspect-[16/10] md:aspect-auto">
             <div 
@@ -26,17 +30,20 @@ export const FeaturedPortCard: React.FC = () => {
                     <p className="font-label text-xs uppercase tracking-widest opacity-60">Pleine mer</p>
                 </div>
             </div>
-            <div className="relative z-10 mt-auto flex items-end justify-between">
-                <div className="space-y-2">
+            <div className="relative z-10 mt-auto flex items-end justify-between gap-4">
+                <div className="space-y-2 flex-1">
                     <div className="flex items-center gap-2 text-on-tertiary-container bg-tertiary-container/30 px-3 py-1.5 rounded-full w-fit">
                         <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>trending_up</span>
                         <span className="text-xs font-bold uppercase tracking-wider">Marée Montante</span>
                     </div>
                     <p className="text-sm opacity-70">Prochaine basse mer à 18:42</p>
                 </div>
-                <button className="bg-surface-container-lowest text-primary p-3 rounded-lg shadow-xl hover:scale-105 transition-transform cursor-pointer">
-                    <span className="material-symbols-outlined">arrow_forward_ios</span>
-                </button>
+                <div className="flex flex-col items-end gap-3">
+                    {selectedPort && <PortTimerBadge port={selectedPort} size="medium" />}
+                    <button className="bg-surface-container-lowest text-primary p-3 rounded-lg shadow-xl hover:scale-105 transition-transform cursor-pointer">
+                        <span className="material-symbols-outlined">arrow_forward_ios</span>
+                    </button>
+                </div>
             </div>
         </div>
     );

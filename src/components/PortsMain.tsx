@@ -75,6 +75,7 @@ export const PortsMain: React.FC = () => {
                 {filteredPorts.map((port, index) => (
                     <PortRowItem 
                         key={`${port.ville}-${index}`}
+                        port={port}
                         name={port.ville}
                         distance={port.endroit}
                         coefficient={0}
